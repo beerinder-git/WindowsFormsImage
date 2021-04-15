@@ -33,7 +33,7 @@ namespace WindowsFormsImage
             Bitmap bmp = new Bitmap(myStream);
             pictureBox1.Image = bmp;*/
 
-            if((counter%2) == 0)
+            if((GetRandomNumber()% 2) == 0)
             { 
                 pictureBox1.Image = global::WindowsFormsImage.Properties.Resources.images; 
             }
@@ -53,7 +53,7 @@ namespace WindowsFormsImage
             player.Play();
 
 
-            if (counter%2 == 0)
+            if (GetRandomNumber()% 2 == 0)
             {
                 lbl_Sound.Text = "Don't Touch ME !!!!!!!";
                 lbl_Sound.Size = new Size(150, 50);
@@ -67,6 +67,12 @@ namespace WindowsFormsImage
             }
             ++counter;
 
+        }
+
+        private int GetRandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(1, 7);
         }
     }
 }
